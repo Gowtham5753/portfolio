@@ -131,6 +131,21 @@ A smart AI-powered web app that summarizes invoice files using Google Gemini.
 
 ---
 
+## 💹 Financial AI Guide
+![Financial AI Guide](public/images/financial_ai_guide.png)
+
+### Overview
+An intelligent, modern web-based financial assistant designed to provide stock analysis, market trends, company insights, and financial guidance through an interactive AI-powered chat interface. Built with a sleek dark-mode dashboard, responsive UI, markdown-rendered conversations, and real-time backend integration for financial analysis.
+
+### Features
+*   **AI-Powered Financial Assistance:** Stock price analysis, market trends, company performance metrics, and financial Q&A.
+*   **Modern User Interface:** Elegant dark mode by default, responsive Tailwind CSS design, animated indicators.
+*   **Smart Chat Experience:** Real-time API integration, Markdown rendering (`marked.js`), and syntax highlighting (`highlight.js`).
+
+**Tech Stack:** HTML5, Tailwind CSS, Vanilla JS, Flask / Node / FastAPI compatible.
+
+---
+
 ## 👨‍💻 Author
 **Gowtham Raju**
 *   [GitHub (@Gowtham5753)](https://github.com/Gowtham5753)
