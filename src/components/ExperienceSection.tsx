@@ -7,6 +7,7 @@ const experiences = [
     role: "Artificial Intelligence & Cloud Technology Intern",
     company: "IBM Inc",
     period: "Sep 2025 - Oct 2025",
+    link: "https://resumeart.netlify.app",
     description: "Built ResumeAI, an LLM-powered resume generation system using FastAPI, Gemini API, and Python. Designed structured prompting workflows using few-shot and chain-of-thought reasoning for reliable AI outputs, improving ATS-friendly template generation by 65%. Deployed on GCP using Docker.",
     tags: ["FastAPI", "Gemini API", "Python", "GCP"],
   },
@@ -14,6 +15,7 @@ const experiences = [
     role: "Frontend Web Developer Intern",
     company: "IBM Inc",
     period: "Aug 2025 - Oct 2025",
+    link: "https://portfgowtham.netlify.app/",
     description: "Built a dynamic portfolio builder using React.js, Tailwind CSS, and HTML/CSS, improving page load time by 35%. Integrated client-side state management and data export features. Deployed on Netlify via CI/CD pipeline (GitHub Actions), achieving 99% uptime.",
     tags: ["React.js", "Tailwind CSS", "CI/CD", "Netlify"],
   }
@@ -24,6 +26,7 @@ const achievements = [
     role: "Google Gen AI Hackathon",
     company: "EasyDox AI",
     period: "Hackathon",
+    link: "https://easydoxai.netlify.app",
     description: "Participated as a 6-member team to build EasyDox AI, an AI-powered legal document analyzer using Gemini 2.5 Flash that summarizes legal documents in multiple languages and supports multilingual voice-to-text input.",
     tags: ["Gemini 2.5 Flash", "Multilingual", "AI"],
   },
@@ -91,7 +94,13 @@ export default function ExperienceSection() {
                 <h4 className={`text-2xl font-serif mb-1 group-hover:text-indigo-500 transition-colors duration-300 ${
                   theme === "dark" ? "text-white" : "text-gray-900"
                 }`}>
-                  {exp.role}
+                  {exp.link ? (
+                    <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {exp.role}
+                    </a>
+                  ) : (
+                    exp.role
+                  )}
                 </h4>
                 <div className={`text-lg mb-3 ${
                   theme === "dark" ? "text-gray-300" : "text-gray-600"
@@ -132,7 +141,13 @@ export default function ExperienceSection() {
                 <h4 className={`text-2xl font-serif mb-1 group-hover:text-indigo-500 transition-colors duration-300 ${
                   theme === "dark" ? "text-white" : "text-gray-900"
                 }`}>
-                  {exp.role}
+                  {exp.link ? (
+                    <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {exp.role}
+                    </a>
+                  ) : (
+                    exp.role
+                  )}
                 </h4>
                 <div className={`text-lg mb-3 ${
                   theme === "dark" ? "text-gray-300" : "text-gray-600"

@@ -19,7 +19,7 @@ export default function Footer() {
             Let's create<br/>something amazing.
           </h2>
           <div className="flex flex-col gap-2 mt-4">
-            <a href="mailto:thokalagowthamraju@gmail.com" className={`text-sm tracking-widest uppercase hover-target underline decoration-transparent hover:decoration-current transition-all ${
+            <a href="mailto:skytech9876@gmail.com" className={`text-sm tracking-widest uppercase hover-target underline decoration-transparent hover:decoration-current transition-all ${
               theme === "dark" ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-black"
             }`}>
               Email Me

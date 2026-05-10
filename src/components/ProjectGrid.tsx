@@ -5,15 +5,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 
 const projectsData = [
-  { id: "01", title: "AI Resume Builder", subtitle: "ATS Compliant Resumes", category: "Full-Stack", year: "2024", image: "/images/ai_resume.png" },
-  { id: "02", title: "RightLaw AI", subtitle: "Indian Legal Intelligence", category: "AI", year: "2024", image: "/images/rightlaw_ai.png" },
-  { id: "03", title: "Wealthy", subtitle: "Expense & Income Tracking", category: "Web App", year: "2024", image: "/images/wealthy_app.png" },
-  { id: "04", title: "Restaurant Menu", subtitle: "Dynamic Menu Rendering", category: "Full-Stack", year: "2024", image: "/images/restaurant_menu.png" },
-  { id: "05", title: "Portfolio Gen", subtitle: "React & Vite Template", category: "Web App", year: "2024", image: "/images/portfolio_gen.png" },
-  { id: "06", title: "FastAPI Search", subtitle: "Multi-tenant API", category: "Backend", year: "2024", image: "/images/fastapi_search.png" },
-  { id: "07", title: "Rate Limiter", subtitle: "Real-time Sync", category: "Backend", year: "2024", image: "/images/fastapi_rate_limiter.png" },
-  { id: "08", title: "Invoice Analyzer", subtitle: "Smart OCR Assistant", category: "AI", year: "2024", image: "/images/ai_invoice_analyzer.png" },
-  { id: "09", title: "Financial AI", subtitle: "Market Trends & Insights", category: "AI", year: "2024", image: "/images/financial_ai_guide.png" }
+  { id: "01", title: "AI Resume Builder", subtitle: "ATS Compliant Resumes", category: "Full-Stack", year: "2024", period: "Jan 2024 - Mar 2024", link: "https://resumeart.netlify.app", image: "/images/ai_resume.png" },
+  { id: "02", title: "RightLaw AI", subtitle: "Indian Legal Intelligence", category: "AI", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/rightlaw-ai--1-", image: "/images/rightlaw_ai.png" },
+  { id: "03", title: "Wealthy", subtitle: "Expense & Income Tracking", category: "Web App", year: "2024", period: "2024", link: "https://wealthy5.netlify.app/", image: "/images/wealthy_app.png" },
+  { id: "04", title: "Restaurant Menu", subtitle: "Dynamic Menu Rendering", category: "Full-Stack", year: "2024", period: "2024", link: "https://resttaurantt.netlify.app/", image: "/images/restaurant_menu.png" },
+  { id: "05", title: "Portfolio Gen", subtitle: "React & Vite Template", category: "Web App", year: "2024", period: "2024", link: "https://portfgowtham.netlify.app/", image: "/images/portfolio_gen.png" },
+  { id: "06", title: "FastAPI Search", subtitle: "Multi-tenant API", category: "Backend", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/Multitenant", image: "/images/fastapi_search.png" },
+  { id: "07", title: "Rate Limiter", subtitle: "Real-time Sync", category: "Backend", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/Ratelimiter", image: "/images/fastapi_rate_limiter.png" },
+  { id: "08", title: "Invoice Analyzer", subtitle: "Smart OCR Assistant", category: "AI", year: "2024", period: "2024", link: "https://invoiceanalyzer.netlify.app/", image: "/images/ai_invoice_analyzer.png" },
+  { id: "09", title: "Financial AI", subtitle: "Market Trends & Insights", category: "AI", year: "2024", period: "2024", link: "https://financial-ai.netlify.app", image: "/images/financial_ai_guide.png" },
+  { id: "10", title: "EasyDox AI", subtitle: "AI-Powered Legal Document Analyzer", category: "AI", year: "2024", period: "2024", link: "https://easydoxai.netlify.app/", image: "/images/easydox_ai.png" }
 ];
 
 const filters = ["All", "Full-Stack", "AI", "Web App", "Backend"];
@@ -65,8 +66,15 @@ export default function ProjectGrid() {
       {/* PROJECTS LIST */}
       <div className="flex flex-col w-full">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, index) => (
-            <motion.div
+          {filteredProjects.map((project, index) => {
+            const isClickable = !!project.link;
+            const Wrapper: any = isClickable ? motion.a : motion.div;
+            
+            return (
+            <Wrapper
+              href={project.link}
+              target={isClickable ? "_blank" : undefined}
+              rel={isClickable ? "noopener noreferrer" : undefined}
               layout
               key={project.id}
               data-cursor-text="View"
@@ -78,9 +86,9 @@ export default function ProjectGrid() {
                 delay: index * 0.08,
                 ease: [0.16, 1, 0.3, 1]
               }}
-              className={`group relative flex flex-col md:flex-row items-start md:items-center justify-between py-10 md:py-16 border-b hover-target cursor-none transition-colors duration-300 ${
+              className={`group relative flex flex-col md:flex-row items-start md:items-center justify-between py-10 md:py-16 border-b hover-target transition-colors duration-300 ${
                 theme === "dark" ? "border-white/10" : "border-black/10"
-              }`}
+              } ${isClickable ? "cursor-pointer" : ""}`}
             >
               {/* Left: Meta */}
               <div className="w-full md:w-1/4 flex md:flex-col gap-4 md:gap-2 mb-4 md:mb-0">
@@ -116,8 +124,8 @@ export default function ProjectGrid() {
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
                 </div>
               </div>
-            </motion.div>
-          ))}
+            </Wrapper>
+          )})}
         </AnimatePresence>
       </div>
 
