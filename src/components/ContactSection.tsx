@@ -18,11 +18,20 @@ export default function ContactSection() {
           Whether you are looking to integrate advanced machine learning into your product, need a custom WebGL experience, or simply want to discuss the latest in decentralized AI, I am always open to new opportunities.
         </p>
         <a
-          href="mailto:hello@unseen.ai"
+          href="mailto:skytech9876@gmail.com"
           className="inline-block text-lg uppercase tracking-widest border-2 border-white/30 text-white px-8 py-4 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 hover-target"
         >
           Initiate Contact
         </a>
+        <p className="mt-6 text-gray-500 text-sm tracking-wider">
+          or reach out directly at{" "}
+          <a
+            href="mailto:skytech9876@gmail.com"
+            className="text-indigo-400 hover:text-indigo-300 transition-colors duration-200 underline underline-offset-2"
+          >
+            skytech9876@gmail.com
+          </a>
+        </p>
       </div>
     </section>
   );
