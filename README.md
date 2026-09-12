@@ -5,7 +5,7 @@ Welcome to my personal portfolio repository! This project showcases my skills, e
 ## 🚀 Live Demo
 
 Check out the live deployed version of my portfolio here:  
-**[Live Demo](https://portfgowtham.netlify.app/)** *(If you use a different Netlify URL, feel free to update this link!)*
+**[Live Demo](https://portfoliotgr.netlify.app/)** *(If you use a different Netlify URL, feel free to update this link!)*
 
 ## 🛠️ Tech Stack
 
