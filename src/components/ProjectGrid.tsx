@@ -5,16 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 
 const projectsData = [
-  { id: "01", title: "AI Resume Builder", subtitle: "ATS Compliant Resumes", category: "Full-Stack", year: "2024", period: "Jan 2024 - Mar 2024", link: "https://resumeart.netlify.app", image: "/images/ai_resume.png" },
-  { id: "02", title: "RightLaw AI", subtitle: "Indian Legal Intelligence", category: "AI", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/rightlaw-ai--1-", image: "/images/rightlaw_ai.png" },
-  { id: "03", title: "Wealthy", subtitle: "Expense & Income Tracking", category: "Web App", year: "2024", period: "2024", link: "https://wealthy5.netlify.app/", image: "/images/wealthy_app.png" },
-  { id: "04", title: "Restaurant Menu", subtitle: "Dynamic Menu Rendering", category: "Full-Stack", year: "2024", period: "2024", link: "https://resttaurantt.netlify.app/", image: "/images/restaurant_menu.png" },
-  { id: "05", title: "Portfolio Gen", subtitle: "React & Vite Template", category: "Web App", year: "2024", period: "2024", link: "https://portfgowtham.netlify.app/", image: "/images/portfolio_gen.png" },
-  { id: "06", title: "FastAPI Search", subtitle: "Multi-tenant API", category: "Backend", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/Multitenant", image: "/images/fastapi_search.png" },
-  { id: "07", title: "Rate Limiter", subtitle: "Real-time Sync", category: "Backend", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/Ratelimiter", image: "/images/fastapi_rate_limiter.png" },
-  { id: "08", title: "Invoice Analyzer", subtitle: "Smart OCR Assistant", category: "AI", year: "2024", period: "2024", link: "https://invoiceanalyzer.netlify.app/", image: "/images/ai_invoice_analyzer.png" },
-  { id: "09", title: "Financial AI", subtitle: "Market Trends & Insights", category: "AI", year: "2024", period: "2024", link: "https://financial-ai.netlify.app", image: "/images/financial_ai_guide.png" },
-  { id: "10", title: "EasyDox AI", subtitle: "AI-Powered Legal Document Analyzer", category: "AI", year: "2024", period: "2024", link: "https://easydoxai.netlify.app/", image: "/images/easydox_ai.png" }
+  { id: "01", title: "AI Resume Builder", subtitle: "ATS Compliant Resumes", category: "Full-Stack", year: "2024", period: "Jan 2024 - Mar 2024", link: "https://resumeart.netlify.app", image: "/images/ai_resume.png", description: "Developed an intelligent platform that assists users in creating ATS-compliant resumes tailored to specific job descriptions. Integrated AI capabilities to suggest impactful bullet points and optimize keywords.", techStack: ["React", "Node.js", "OpenAI API", "Tailwind"] },
+  { id: "02", title: "RightLaw AI", subtitle: "Indian Legal Intelligence", category: "AI", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/rightlaw-ai--1-", image: "/images/rightlaw_ai.png", description: "Engineered an AI-powered legal assistant designed for the Indian legal framework. Enables legal professionals to quickly search through case laws, generate legal drafts, and summarize lengthy court documents.", techStack: ["Next.js", "Python", "LangChain", "Vector DB"] },
+  { id: "03", title: "Wealthy", subtitle: "Expense & Income Tracking", category: "Web App", year: "2024", period: "2024", link: "https://wealthy5.netlify.app/", image: "/images/wealthy_app.png", description: "Built a comprehensive personal finance dashboard that allows users to seamlessly track their daily expenses and income streams. Implemented interactive charts and intuitive categorizations.", techStack: ["React", "Firebase", "Chart.js", "Tailwind"] },
+  { id: "04", title: "Restaurant Menu", subtitle: "Dynamic Menu Rendering", category: "Full-Stack", year: "2024", period: "2024", link: "https://resttaurantt.netlify.app/", image: "/images/restaurant_menu.png", description: "Created a responsive and interactive restaurant menu application that dynamically fetches and displays food items based on categories. Features a robust backend for easy menu management.", techStack: ["React", "Express", "MongoDB", "CSS"] },
+  { id: "05", title: "Portfolio Gen", subtitle: "React & Vite Template", category: "Web App", year: "2024", period: "2024", link: "https://portfgowtham.netlify.app/", image: "/images/portfolio_gen.png", description: "Designed a highly customizable and blazing-fast portfolio template aimed at developers and creative professionals. Built with modern web technologies for maximum performance and easy deployment.", techStack: ["React", "Vite", "Framer Motion", "Tailwind"] },
+  { id: "06", title: "FastAPI Search", subtitle: "Multi-tenant API", category: "Backend", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/Multitenant", image: "/images/fastapi_search.png", description: "Developed a highly scalable, multi-tenant search API capable of serving isolated data for different client organizations. Implemented robust authentication and optimized query execution.", techStack: ["Python", "FastAPI", "PostgreSQL", "Docker"] },
+  { id: "07", title: "Rate Limiter", subtitle: "Real-time Sync", category: "Backend", year: "2024", period: "2024", link: "https://github.com/Gowtham5753/Ratelimiter", image: "/images/fastapi_rate_limiter.png", description: "Engineered a distributed rate-limiting microservice designed to protect APIs from abuse and ensure fair resource allocation. Utilized Redis for real-time synchronization across instances.", techStack: ["Go", "Redis", "gRPC", "Docker"] },
+  { id: "08", title: "Invoice Analyzer", subtitle: "Smart OCR Assistant", category: "AI", year: "2024", period: "2024", link: "https://invoiceanalyzer.netlify.app/", image: "/images/ai_invoice_analyzer.png", description: "Created an intelligent tool that automates the extraction of key data points from various invoice formats using OCR. The AI assistant maps text to structured fields, minimizing manual data entry.", techStack: ["Python", "Tesseract", "OpenAI", "Flask"] },
+  { id: "09", title: "Financial AI", subtitle: "Market Trends & Insights", category: "AI", year: "2024", period: "2024", link: "https://financial-ai.netlify.app", image: "/images/financial_ai_guide.png", description: "Developed a predictive analytics platform that analyzes historical financial data to identify emerging market trends. Integrated complex machine learning models to forecast stock movements.", techStack: ["Python", "Pandas", "Scikit-Learn", "React"] },
+  { id: "10", title: "EasyDox AI", subtitle: "AI-Powered Legal Document Analyzer", category: "AI", year: "2024", period: "2024", link: "https://easydoxai.netlify.app/", image: "/images/easydox_ai.png", description: "Built a specialized AI application designed to rapidly review and summarize lengthy legal contracts and agreements. Automatically highlights critical clauses and identifies potential risks.", techStack: ["Next.js", "Prisma", "OpenAI", "Tailwind"] },
+  { id: "11", title: "RazorReclaim", subtitle: "AI Revenue Recovery Dashboard", category: "Web App", year: "2024", period: "2024", link: "https://moneyrecover.netlify.app/", image: "/images/money_recover.png", description: "An AI-powered revenue recovery dashboard designed to help businesses track, manage, and optimize their payment recovery strategies with intuitive charts and metrics.", techStack: ["React", "Tailwind", "Vite"] }
 ];
 
 const filters = ["All", "Full-Stack", "AI", "Web App", "Backend"];
@@ -107,11 +108,25 @@ export default function ProjectGrid() {
                 }`}>
                   {project.title}
                 </h3>
-                <p className={`mt-4 text-lg transition-all duration-500 group-hover:-translate-y-2 opacity-70 group-hover:opacity-100 ${
-                  theme === "dark" ? "text-gray-300" : "text-gray-600"
+                <p className={`mt-2 text-xl font-medium transition-all duration-500 group-hover:-translate-y-2 ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-700"
                 }`}>
                   {project.subtitle}
                 </p>
+                <p className={`mt-4 text-base leading-relaxed transition-all duration-500 group-hover:-translate-y-2 opacity-70 group-hover:opacity-100 ${
+                  theme === "dark" ? "text-gray-400" : "text-gray-600"
+                }`}>
+                  {project.description}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2 transition-all duration-500 group-hover:-translate-y-2">
+                  {project.techStack.map(tech => (
+                    <span key={tech} className={`px-3 py-1 text-xs font-semibold rounded-full border ${
+                      theme === "dark" ? "border-white/20 text-gray-300 bg-white/5" : "border-black/20 text-gray-700 bg-black/5"
+                    }`}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/* Right: Thumbnail */}
